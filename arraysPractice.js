@@ -101,10 +101,12 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above you're given a function that will return a random number between 0 and 30, and an array full of numbers. Your job is to write a function named finder that will get a random number, then loop through the array to see if that random number is in the array. If it is, return true, if it's not, return false
 
   //Code Here
-function finder(getRandomArbitrary, numbers) {
-  var numbersLength = numbers.length;
-  for (var i = 0; i < numbersLength; i++) {
-    if (numbers[i] === getRandomArbitrary) {
+function finder(numbers) {
+  //console.log("Random",getRandomArbitrary);
+  var num = getRandomArbitrary();
+  //console.log("numbers",numbers);
+  for (var i = 0; i < numbers.length; i++) {
+    if (numbers[i] === num) {
       return true;
     }
   };
@@ -126,7 +128,8 @@ function reverse(str) {
 //Next Problem
 
 
-var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
+/*var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];*/
+var myGroceryList=5;
 /*
   Here we're going to write a function that mimics going shopping and checking things off of our grocery list,
   and adding new items to our list. 
@@ -142,6 +145,7 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
   //Code Here
 function removeItem(myGroceryList, itemToBeRemoved) {
+  myGroceryList = myGroceryList || [];
   for (var i = myGroceryList.length - 1; i >=0; i--) {
     if (myGroceryList[i] === itemToBeRemoved)
       myGroceryList.splice(i, 1);
@@ -155,6 +159,7 @@ function removeItem(myGroceryList, itemToBeRemoved) {
 
 //Next Problem
 function addItem(myGroceryList, itemToBeAdded) {
+  myGroceryList = myGroceryList || [];
   myGroceryList.push(itemToBeAdded);
   return myGroceryList;
 }
